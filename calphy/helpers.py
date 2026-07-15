@@ -30,6 +30,7 @@ from collections import Counter, defaultdict
 
 from pylammpsmpi import LammpsLibrary
 from lammps import lammps
+from lammps.mliap import activate_mliappy
 from ase.io import read, write
 
 import pyscal3.core as pc
@@ -115,7 +116,7 @@ def create_object(
         if "-screen" not in cmdargs:
             cmdargs.extend(["-screen", "none"])
         lmp = LammpsLibrary(cores=cores, working_directory=directory, cmdargs=cmdargs)
-        lammps.mliap.activate_mliappy(lmp)
+        activate_mliappy(lmp)
     commands = [
         ["units", "metal"],
         ["boundary", "p p p"],
