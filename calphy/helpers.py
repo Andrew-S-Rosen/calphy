@@ -115,7 +115,7 @@ def create_object(
         if "-screen" not in cmdargs:
             cmdargs.extend(["-screen", "none"])
         lmp = LammpsLibrary(cores=cores, working_directory=directory, cmdargs=cmdargs)
-
+        lammps.mliap.activate_mliappy(lmp)
     commands = [
         ["units", "metal"],
         ["boundary", "p p p"],
