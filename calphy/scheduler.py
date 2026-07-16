@@ -40,6 +40,8 @@ class Local:
             "cores": cores,
             "hint": None,
             "directory": directory,
+            "gres": None,
+            "account": None,
             "options": [],
             "commands": [],
             "header": "#!/bin/bash",
